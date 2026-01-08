@@ -1,0 +1,24 @@
+services:
+  service-1:
+    build:
+      context: ./service-1
+    container_name: service-1
+    ports:
+      - "8443:8443"
+
+  service-2:
+    build:
+      context: ./service-2
+    container_name: service-2
+    ports:
+      - "8444:8443"
+
+  service-3:
+    image: service-3
+    build:
+      context: ./service-3
+    container_name: service-3
+    ports:
+      - "8445:8443"
+    volumes:
+      - ./output:/app/output

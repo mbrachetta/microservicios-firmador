@@ -1,0 +1,11 @@
+# Java / Maven / Gradle
+target/
+build/
+.gradle/
+
+# IntelliJ
+.idea/
+*.iml
+
+# OS
+.DS_Store
