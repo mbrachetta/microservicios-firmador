@@ -18,13 +18,15 @@ public class ReporteFileService {
 
     public void generarReporte(LoteRequest lote) throws IOException {
 
+        System.out.println("el outputDir es: " + outputDir);
+
         Path dir = Paths.get(outputDir);
         Files.createDirectories(dir); // crea output/ si no existe
 
-        String timestamp = LocalDateTime.now()
+        String ts = LocalDateTime.now()
                 .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
 
-        Path archivo = dir.resolve("reporte_" + timestamp + ".txt");
+        Path archivo = dir.resolve("reporte_" + ts + ".txt");
 
         StringBuilder sb = new StringBuilder();
 
@@ -47,11 +49,11 @@ public class ReporteFileService {
                     .append(" | Error: ").append(doc.getErrorcode())
                     .append("\n");
         }
-
         Files.write(
                 archivo,
                 sb.toString().getBytes(),
-                StandardOpenOption.CREATE_NEW
+                StandardOpenOption.CREATE,
+                StandardOpenOption.TRUNCATE_EXISTING
         );
     }
 }

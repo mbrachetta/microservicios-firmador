@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-SERVICES=("service-1" "service-2" "service-3")
+SERVICES=("service-1" "service-2" "service-3" "service-4")
 
 echo "======================================"
 echo "🔄 Recompilando microservicios..."

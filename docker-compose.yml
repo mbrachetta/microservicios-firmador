@@ -22,3 +22,13 @@ services:
       - "8445:8443"
     volumes:
       - ./output:/app/output
+
+  service-4:
+    image: service-4
+    build:
+      context: ./service-4
+    container_name: service-4
+    ports:
+      - "8446:8443"
+    volumes:
+      - ./output:/app/output

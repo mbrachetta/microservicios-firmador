@@ -7,5 +7,8 @@ build/
 .idea/
 *.iml
 
+# Directorio de uso output
+output/
+
 # OS
 .DS_Store
